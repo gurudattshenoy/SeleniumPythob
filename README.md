@@ -1,2 +1,2 @@
-# SeleniumPythob
+# SeleniumPython
 Selenium Python Framework
