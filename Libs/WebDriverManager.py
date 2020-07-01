@@ -18,10 +18,11 @@ class WebDriverManager:
 
                 if browser_name == "ie":
                     cls.driver = webdriver.ie()
-
-                cls.driver.maximize_window()
-                cls.driver.delete_all_cookies()
-                return cls.driver
+                if cls.driver:
+                    cls.driver.maximize_window()
+                    cls.driver.delete_all_cookies()
+                    cls.driver.implicitly_wait(driver_conf.implicit_wait)
+                    return cls.driver
             else:
                 raise AttributeError("{} browser is not supported.".format(browser_name))
 
