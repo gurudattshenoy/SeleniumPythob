@@ -1,5 +1,7 @@
 import polling
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
+
 from Libs.WebDriverManager import WebDriverManager
 class UiHelpers:
     _driver = WebDriverManager.get_browser()
@@ -24,6 +26,10 @@ class UiHelpers:
         cls.find_element(locator).send_keys(input)
 
 
+    @classmethod
+    def select_dropdown_by_index(cls, locator, idx):
+        s = Select(cls.find_element(locator))
+        s.select_by_index(idx)
 
 
 
