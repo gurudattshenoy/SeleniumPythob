@@ -53,8 +53,12 @@ class UiHelpers:
 
     @classmethod
     def quit_browser(cls):
-        cls._driver.quit()
+        if cls._driver:
+            cls._driver.quit()
 
     @classmethod
     def close_window(cls):
-        cls._driver.close()
+        if cls._driver:
+            cls._driver.close()
+
+
