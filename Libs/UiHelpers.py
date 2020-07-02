@@ -49,7 +49,10 @@ class UiHelpers:
     @classmethod
     def select_dropdown_by_text(cls, locator, text):
         s = Select(cls.find_element(locator))
-        s.select_by_visible_text(text)
+        try:
+            s.select_by_visible_text(text)
+        except Exception as e:
+            raise Exception(e)
 
     @classmethod
     def quit_browser(cls):
@@ -60,5 +63,4 @@ class UiHelpers:
     def close_window(cls):
         if cls._driver:
             cls._driver.close()
-
 
