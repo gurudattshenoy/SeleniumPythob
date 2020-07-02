@@ -1,5 +1,6 @@
 {
   "browser_name": "firefox",
   "implicit_wait": 10,
-  "explicit_wait": 20
+  "explicit_wait": 20,
+  "url": "http://newtours.demoaut.com"
 }

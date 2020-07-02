@@ -37,6 +37,10 @@ class UiHelpers:
         cls.find_element(locator).send_keys(input)
 
     @classmethod
+    def click_element(cls, locator):
+        cls.find_element(locator).click()
+
+    @classmethod
     def select_dropdown_by_index(cls, locator, idx):
         s = Select(cls.find_element(locator))
         s.select_by_index(idx)
